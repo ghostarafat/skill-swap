@@ -3,7 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
 
 function Signup() {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -14,17 +14,30 @@ function Signup() {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
 
-    if (!/[A-Z]/.test(password))
+    // Password validation
+    if (!/[A-Z]/.test(password)) {
       return setError("At least one uppercase letter");
-    if (!/[a-z]/.test(password))
+    }
+    if (!/[a-z]/.test(password)) {
       return setError("At least one lowercase letter");
-    if (password.length < 6) return setError("Minimum 6 characters");
+    }
+    if (password.length < 6) {
+      return setError("Minimum 6 characters");
+    }
 
+    // Create user and update profile
     createUser(email, password)
       .then(() => {
         updateUserProfile(name, photo);
         navigate("/");
       })
+      .catch((err) => setError(err.message));
+  };
+
+  // Google Signup/Login handler
+  const handleGoogle = () => {
+    googleLogin()
+      .then(() => navigate("/"))
       .catch((err) => setError(err.message));
   };
 
@@ -61,9 +74,18 @@ function Signup() {
         />
         {error && <p className="text-red-500 text-sm">{error}</p>}
         <button className="bg-yellow-500 text-white w-full py-2 rounded">
-          Signup
+          Register
         </button>
       </form>
+
+     
+      <button
+        onClick={handleGoogle}
+        className="bg-red-400 text-white w-full py-2 mt-3 rounded"
+      >
+        Signup with Google
+      </button>
+
       <p className="mt-3 text-center text-sm">
         Already have an account?{" "}
         <Link to="/login" className="text-yellow-700">
