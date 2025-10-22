@@ -1,32 +1,32 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import App from "./App.jsx";
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
-import Root from "./layout/Root.jsx";
-import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Root,
-    children: [
-      {
-        index: true,
-        Component: Home,
-      },
-      {
-        path: "/login",
-        Component: Login,
-      },
-    ],
-  },
-]);
+function MainApp() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Navbar></Navbar>
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </StrictMode>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home></Home>}></Route>
+            {/* other routes will be added later like /login, /signup etc */}
+          </Routes>
+        </main>
+
+        <Footer></Footer>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <MainApp></MainApp>
+  </React.StrictMode>
 );

@@ -1,4 +1,4 @@
-// Do NOT send firebase config to repo 
+// Do NOT send firebase config to repo
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -8,12 +8,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAW_s2qZCXMM6MXrnNjcSNZ324eMF79Y5U",
-  authDomain: "simple-firebase-auth-bfa36.firebaseapp.com",
-  projectId: "simple-firebase-auth-bfa36",
-  storageBucket: "simple-firebase-auth-bfa36.firebasestorage.app",
-  messagingSenderId: "270911459445",
-  appId: "1:270911459445:web:fed5cc2868e33fbadda83c"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
