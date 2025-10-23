@@ -1,6 +1,6 @@
 function HowItWorks() {
   return (
-    <div className="my-10 text-center">
+    <div className="my-10 text-center w-11/12 mx-auto">
       <h2 className="text-2xl font-bold mb-5 text-yellow-700">
         🪄 How It Works
       </h2>

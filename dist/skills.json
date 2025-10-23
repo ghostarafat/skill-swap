@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners.",
+    "image": "https://i.postimg.cc/xxxxx/guitar.png",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers.",
+    "image": "https://i.postimg.cc/xxxxx/english.png",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Basic Web Development",
+    "providerName": "Rayhan Khan",
+    "providerEmail": "rayhan@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Intro to HTML, CSS and JS — build your first webpage.",
+    "image": "https://i.postimg.cc/xxxxx/webdev.png",
+    "category": "Tech"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Maya Roy",
+    "providerEmail": "maya@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Gentle yoga classes focusing on flexibility & breathing.",
+    "image": "https://i.postimg.cc/xxxxx/yoga.png",
+    "category": "Fitness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Portrait Watercolor",
+    "providerName": "Ishita Sen",
+    "providerEmail": "ishita@skillswap.com",
+    "price": 25,
+    "rating": 4.5,
+    "slotsAvailable": 3,
+    "description": "Beginner-friendly watercolor portrait techniques.",
+    "image": "https://i.postimg.cc/xxxxx/watercolor.png",
+    "category": "Art"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Intro to Spoken French",
+    "providerName": "Luc Moreau",
+    "providerEmail": "luc@skillswap.com",
+    "price": 18,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Basic conversational French for travelers.",
+    "image": "https://i.postimg.cc/xxxxx/french.png",
+    "category": "Language"
+  }
+]

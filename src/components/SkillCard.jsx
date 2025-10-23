@@ -1,6 +1,6 @@
 function SkillCard({ skill }) {
   return (
-    <div className="border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition">
+    <div className="border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition ">
       <img
         src={skill.image}
         alt={skill.skillName}

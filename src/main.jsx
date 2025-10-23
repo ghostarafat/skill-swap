@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
+import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import PrivateRoute from "./routes/PrivateRoute";
 import AuthProvider from "./provider/AuthProvider";
 

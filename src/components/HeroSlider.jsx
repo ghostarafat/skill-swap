@@ -12,23 +12,37 @@ function HeroSlider() {
         pagination={{ clickable: true }}
         loop
       >
+        {/* Slide 1 */}
         <SwiperSlide>
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/007/491/740/non_2x/knowledge-or-education-as-intelligence-mind-experience-concept-up-skill-learn-new-things-or-knowledge-development-for-new-skill-and-improve-job-qualification-vector.jpg"
-            className="w-full h-[400px] object-cover rounded-lg"
-          />
+          <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] rounded-lg overflow-hidden">
+            <img
+              src="https://i.postimg.cc/8zmyBMn6/slide1.png"
+              alt="Slide 1"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </SwiperSlide>
+
+        {/* Slide 2 */}
         <SwiperSlide>
-          <img
-            src="https://img.freepik.com/free-vector/set-people-sharing_52683-3091.jpg?semt=ais_hybrid&w=740&q=80"
-            className="w-full h-[400px] object-cover rounded-lg"
-          />
+          <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] rounded-lg overflow-hidden">
+            <img
+              src="https://i.postimg.cc/VLcdQCDB/slide2.png"
+              alt="Slide 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </SwiperSlide>
+
+        {/* Slide 3 */}
         <SwiperSlide>
-          <img
-            src="https://img.freepik.com/free-vector/my-hobby-related-sports-activities-freetime-illustration_24908-60577.jpg?semt=ais_hybrid&w=740&q=80"
-            className="w-full h-[400px] object-cover rounded-lg"
-          />
+          <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] rounded-lg overflow-hidden">
+            <img
+              src="https://i.postimg.cc/Gtjr1Hmk/slide3.png"
+              alt="Slide 3"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>

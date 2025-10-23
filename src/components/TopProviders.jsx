@@ -6,7 +6,7 @@ function TopProviders() {
   ];
 
   return (
-    <div className="my-10">
+    <div className="my-10 w-11/12 mx-auto">
       <h2 className="text-2xl font-bold text-center mb-5 text-yellow-700">
         🌟 Top Rated Providers
       </h2>
