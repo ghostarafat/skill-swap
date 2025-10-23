@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function SkillDetails() {
   const { id } = useParams();
@@ -15,6 +17,16 @@ function SkillDetails() {
       })
       .catch((err) => console.log("Error:", err));
   }, [id]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+    const handleScroll = () => AOS.refresh();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleBookSession = (e) => {
     e.preventDefault();
@@ -32,36 +44,53 @@ function SkillDetails() {
 
   return (
     <div className="px-6 my-10">
-      <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-6">
+      <div
+        className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-6"
+        data-aos="fade-up"
+      >
         <img
           src={skill.image}
           alt={skill.skillName}
           className="rounded-lg mb-5 w-full h-60 object-cover"
+          data-aos="zoom-in"
         />
-        <h2 className="text-2xl font-bold text-yellow-700 mb-2">
+        <h2
+          className="text-2xl font-bold text-yellow-700 mb-2"
+          data-aos="fade-right"
+        >
           {skill.skillName}
         </h2>
-        <p>
-          <strong>Provider:</strong> {skill.providerName}
-        </p>
-        <p>
-          <strong>Email:</strong> {skill.providerEmail}
-        </p>
-        <p>
-          <strong>Category:</strong> {skill.category}
-        </p>
-        <p>
-          <strong>Price:</strong> ${skill.price}
-        </p>
-        <p>
-          <strong>Rating:</strong> ⭐ {skill.rating}
-        </p>
-        <p>
-          <strong>Slots Available:</strong> {skill.slotsAvailable}
-        </p>
-        <p className="mt-3 text-gray-600">{skill.description}</p>
 
-        <form onSubmit={handleBookSession} className="mt-6 space-y-3">
+        <div className="space-y-1 text-gray-700" data-aos="fade-up">
+          <p>
+            <strong>Provider:</strong> {skill.providerName}
+          </p>
+          <p>
+            <strong>Email:</strong> {skill.providerEmail}
+          </p>
+          <p>
+            <strong>Category:</strong> {skill.category}
+          </p>
+          <p>
+            <strong>Price:</strong> ${skill.price}
+          </p>
+          <p>
+            <strong>Rating:</strong> ⭐ {skill.rating}
+          </p>
+          <p>
+            <strong>Slots Available:</strong> {skill.slotsAvailable}
+          </p>
+        </div>
+
+        <p className="mt-3 text-gray-600" data-aos="fade-up">
+          {skill.description}
+        </p>
+
+        <form
+          onSubmit={handleBookSession}
+          className="mt-6 space-y-3"
+          data-aos="fade-up"
+        >
           <input
             type="text"
             name="name"

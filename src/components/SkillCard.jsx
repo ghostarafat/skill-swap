@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function SkillCard({ skill }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   return (
-    <div className=" rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition duration-200">
+    <div
+      className="rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition duration-200"
+      data-aos="zoom-in-up"
+    >
       <div className="overflow-hidden rounded-md h-40 w-full">
         <img
           src={skill.image}
@@ -15,6 +28,7 @@ function SkillCard({ skill }) {
         {skill.skillName}
       </h3>
       <p className="text-sm text-gray-600">By {skill.providerName}</p>
+
       <div className="flex justify-between items-center mt-1 mb-3">
         <p className="text-yellow-600 font-bold">${skill.price}</p>
         <p className="text-sm text-gray-500">⭐ {skill.rating}</p>

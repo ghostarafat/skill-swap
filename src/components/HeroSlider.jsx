@@ -33,25 +33,22 @@ function HeroSlider() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
-              {/* Background Image */}
               <img
                 src={slide.img}
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
 
-              {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black/40"></div>
 
-              {/* Centered Text Content */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
-                <h2 className="text-2xl sm:text-4xl font-bold mb-3 drop-shadow-lg">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-3 sm:px-6">
+                <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-2 sm:mb-3 drop-shadow-lg leading-tight">
                   {slide.title}
                 </h2>
-                <p className="text-sm sm:text-lg mb-5 max-w-2xl drop-shadow-md">
+                <p className="text-xs sm:text-sm md:text-lg mb-3 sm:mb-5 max-w-xs sm:max-w-xl drop-shadow-md text-gray-300">
                   {slide.text}
                 </p>
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-5 py-2 rounded-full shadow-md transition-all duration-300">
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-semibold text-xs sm:text-sm md:text-base px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-md transition-all duration-300">
                   Explore
                 </button>
               </div>
