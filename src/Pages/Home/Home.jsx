@@ -11,7 +11,7 @@ function Home() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("/public/skills.json")
+    fetch("/skills.json")
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.log("Error loading skills:", err));

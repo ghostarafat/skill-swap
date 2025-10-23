@@ -7,7 +7,7 @@ function SkillDetails() {
   const [skill, setSkill] = useState(null);
 
   useEffect(() => {
-    fetch("/public/skills.json")
+    fetch("/skills.json")
       .then((res) => res.json())
       .then((data) => {
         const selected = data.find((item) => item.skillId === parseInt(id));

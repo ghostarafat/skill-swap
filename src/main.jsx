@@ -11,6 +11,8 @@ import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import SkillDetails from "./Pages/SkillDetails";
 import PrivateRoute from "./routes/PrivateRoute";
 import AuthProvider from "./provider/AuthProvider";
+import { Toaster } from "react-hot-toast";
+import MyProfile from "./Pages/Profile/MyProfile";
 
 function MainApp() {
   return (
@@ -34,10 +36,20 @@ function MainApp() {
                   </PrivateRoute>
                 }
               />
+
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <MyProfile />
+                  </PrivateRoute>
+                }
+              />
             </Routes>
           </main>
 
           <Footer />
+          <Toaster></Toaster>
         </div>
       </BrowserRouter>
     </AuthProvider>

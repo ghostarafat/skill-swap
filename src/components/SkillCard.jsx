@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 
 function SkillCard({ skill }) {
   return (
-    <div className="border rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition duration-200">
-      <img
-        src={skill.image}
-        alt={skill.skillName}
-        className="rounded-md h-40 w-full object-cover"
-      />
+    <div className=" rounded-xl shadow-md p-4 bg-white hover:shadow-lg transition duration-200">
+      <div className="overflow-hidden rounded-md h-40 w-full">
+        <img
+          src={skill.image}
+          alt={skill.skillName}
+          className="h-full w-full object-cover transform transition-transform duration-300 ease-out hover:scale-105 hover:rotate-1"
+        />
+      </div>
+
       <h3 className="text-lg font-semibold mt-3 text-yellow-700">
         {skill.skillName}
       </h3>

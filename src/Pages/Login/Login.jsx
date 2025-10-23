@@ -1,17 +1,18 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 function Login() {
   const { loginUser, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
     const password = e.target.password.value;
 
     loginUser(email, password)
@@ -31,6 +32,8 @@ function Login() {
           type="email"
           name="email"
           placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} //
           className="w-full p-2 border mb-3"
           required
         />
@@ -48,16 +51,18 @@ function Login() {
       </form>
       <button
         onClick={handleGoogle}
-        className="bg-red-400 text-white w-full py-2 mt-3 rounded"
+        className="bg-red-400 text-white w-full py-2 mt-3 rounded flex items-center justify-center gap-2"
       >
-        Login with Google
+        <FcGoogle size={18} /> Login with Google
       </button>
+
       <p className="mt-3 text-center text-sm">
-        Forget password?{" "}
-        <Link to="/forget" className="text-yellow-700">
+        Forget password?
+        <Link to="/forget" state={{ email }} className="text-yellow-700">
           Reset
         </Link>
       </p>
+
       <p className="mt-1 text-center text-sm">
         New here?{" "}
         <Link to="/signup" className="text-yellow-700">

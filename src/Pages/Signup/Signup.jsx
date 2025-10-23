@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 function Signup() {
   const { createUser, updateUserProfile, googleLogin } =
@@ -15,7 +16,6 @@ function Signup() {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
 
-    // Password validation
     if (!/[A-Z]/.test(password)) {
       return setError("At least one uppercase letter");
     }
@@ -26,7 +26,6 @@ function Signup() {
       return setError("Minimum 6 characters");
     }
 
-    // Create user and update profile
     createUser(email, password)
       .then(() => {
         updateUserProfile(name, photo);
@@ -35,7 +34,6 @@ function Signup() {
       .catch((err) => setError(err.message));
   };
 
-  // Google Signup/Login handler
   const handleGoogle = () => {
     googleLogin()
       .then(() => navigate("/"))
@@ -81,13 +79,14 @@ function Signup() {
 
       <button
         onClick={handleGoogle}
-        className="bg-red-400 text-white w-full py-2 mt-3 rounded"
+        className="bg-red-400 text-white w-full py-2 mt-3 rounded flex items-center justify-center gap-2"
       >
+        <FcGoogle size={18} />
         Signup with Google
       </button>
 
       <p className="mt-3 text-center text-sm">
-        Already have an account?{" "}
+        Already have an account?
         <Link to="/login" className="text-yellow-700">
           Login
         </Link>
