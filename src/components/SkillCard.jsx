@@ -12,8 +12,10 @@ function SkillCard({ skill }) {
         {skill.skillName}
       </h3>
       <p className="text-sm text-gray-600">By {skill.providerName}</p>
-      <p className="text-yellow-600 font-bold mt-1">${skill.price}</p>
-      <p className="text-sm text-gray-500 mb-3">⭐ {skill.rating}</p>
+      <div className="flex justify-between items-center mt-1 mb-3">
+        <p className="text-yellow-600 font-bold">${skill.price}</p>
+        <p className="text-sm text-gray-500">⭐ {skill.rating}</p>
+      </div>
 
       <Link to={`/skill/${skill.skillId}`}>
         <button className="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600">
