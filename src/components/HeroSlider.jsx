@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -38,7 +39,6 @@ function HeroSlider() {
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
-
               <div className="absolute inset-0 bg-black/40"></div>
 
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-3 sm:px-6">
@@ -48,9 +48,11 @@ function HeroSlider() {
                 <p className="text-xs sm:text-sm md:text-lg mb-3 sm:mb-5 max-w-xs sm:max-w-xl drop-shadow-md text-gray-300">
                   {slide.text}
                 </p>
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-semibold text-xs sm:text-sm md:text-base px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-md transition-all duration-300">
-                  Explore
-                </button>
+                <Link to="/all-skills">
+                  <button className="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-semibold text-xs sm:text-sm md:text-base px-3 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-md transition-all duration-300">
+                    Explore
+                  </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
