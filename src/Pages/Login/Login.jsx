@@ -25,7 +25,7 @@ function Login() {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border rounded-lg bg-yellow-50">
-      <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">Login Here</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"
@@ -61,7 +61,7 @@ function Login() {
       <p className="mt-1 text-center text-sm">
         New here?{" "}
         <Link to="/signup" className="text-yellow-700">
-          Create an account
+          Register
         </Link>
       </p>
     </div>

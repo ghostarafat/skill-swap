@@ -11,14 +11,14 @@ function Home() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("/data/skills.json")
+    fetch("/public/skills.json")
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.log("Error loading skills:", err));
   }, []);
 
   return (
-    <div className="px-6 mb-10">
+    <div className="px-6 my-10 w-full max-w-[1200px] mx-auto">
       <div className="text-center mt-10">
         <h1 className="text-3xl md:text-4xl font-bold text-yellow-700 mb-4 flex items-center justify-center gap-2">
           Welcome to SkillSwap <GiSunflower className="text-yellow-500" />
@@ -30,13 +30,15 @@ function Home() {
 
       <HeroSlider />
 
-      <h2 className="text-2xl font-bold mb-5 text-yellow-700 text-center">
-        🔥 Popular Skills
-      </h2>
-      <div className="grid md:grid-cols-3 gap-6">
-        {skills.map((skill) => (
-          <SkillCard key={skill.skillId} skill={skill} />
-        ))}
+      <div className="">
+        <h2 className=" text-2xl font-bold mb-5 text-yellow-700 text-center">
+          🔥 Popular Skills
+        </h2>
+        <div className=" grid md:grid-cols-3 gap-6">
+          {skills.map((skill) => (
+            <SkillCard key={skill.skillId} skill={skill} />
+          ))}
+        </div>
       </div>
 
       <TopProviders />

@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
+import SkillDetails from "./Pages/SkillDetails";
 import PrivateRoute from "./routes/PrivateRoute";
 import AuthProvider from "./provider/AuthProvider";
 
@@ -16,21 +17,27 @@ function MainApp() {
     <AuthProvider>
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
-          <Navbar></Navbar>
+          <Navbar />
 
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={<Home></Home>}></Route>
-              <Route path="/login" element={<Login></Login>}></Route>
-              <Route path="/signup" element={<Signup></Signup>}></Route>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forget" element={<ForgetPassword />} />
+
               <Route
-                path="/forget"
-                element={<ForgetPassword></ForgetPassword>}
-              ></Route>
+                path="/skill/:id"
+                element={
+                  <PrivateRoute>
+                    <SkillDetails />
+                  </PrivateRoute>
+                }
+              />
             </Routes>
           </main>
 
-          <Footer></Footer>
+          <Footer />
         </div>
       </BrowserRouter>
     </AuthProvider>
@@ -39,6 +46,6 @@ function MainApp() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MainApp></MainApp>
+    <MainApp />
   </React.StrictMode>
 );

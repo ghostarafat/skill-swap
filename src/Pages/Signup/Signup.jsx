@@ -3,7 +3,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
 
 function Signup() {
-  const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -43,7 +44,7 @@ function Signup() {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border rounded-lg bg-yellow-50">
-      <h2 className="text-2xl font-bold text-center mb-4">Signup</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">Signup Here</h2>
       <form onSubmit={handleSignup}>
         <input
           type="text"
@@ -78,7 +79,6 @@ function Signup() {
         </button>
       </form>
 
-     
       <button
         onClick={handleGoogle}
         className="bg-red-400 text-white w-full py-2 mt-3 rounded"
