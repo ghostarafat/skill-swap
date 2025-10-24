@@ -33,7 +33,7 @@ function Home() {
 
       {/* --- Popular Skills --- */}
       <div>
-        <h2 className="text-xl sm:text-2xl font-bold mb-5 text-yellow-700 text-center">
+        <h2 className="text-xl sm:text-3xl font-bold mb-5 text-yellow-700 text-center">
           🔥 Popular Skills
         </h2>
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">

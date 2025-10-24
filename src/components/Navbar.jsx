@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import userImage from "../assets/user.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { GiBodySwapping } from "react-icons/gi";
 
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -21,7 +22,10 @@ function Navbar() {
           to="/"
           className="text-xl sm:text-2xl font-bold text-yellow-800 tracking-wide"
         >
-          SkillSwap
+          <span className="flex items-center justify-center gap-1">
+            <GiBodySwapping />
+            SkillSwap
+          </span>
         </Link>
 
         {/* Desktop & Tablet Menu */}

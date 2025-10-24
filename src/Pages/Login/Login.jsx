@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 function Login() {
   const { loginUser, googleLogin } = useContext(AuthContext);
-  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,12 +16,28 @@ function Login() {
     const password = e.target.password.value;
 
     loginUser(email, password)
-      .then(() => navigate(from, { replace: true }))
-      .catch((err) => setError(err.message));
+      .then(() => {
+        toast.success("Login successful! 🎉"); //
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        if (err.code === "auth/invalid-credential") {
+          toast.error("Invalid email or password. Please try again.");
+        } else if (err.code === "auth/too-many-requests") {
+          toast.error("Too many attempts. Try again later.");
+        } else {
+          toast.error(err.message);
+        }
+      });
   };
 
   const handleGoogle = () => {
-    googleLogin().then(() => navigate(from, { replace: true }));
+    googleLogin()
+      .then(() => {
+        toast.success("Logged in with Google!");
+        navigate(from, { replace: true });
+      })
+      .catch(() => toast.error("Google login failed!"));
   };
 
   return (
@@ -33,7 +49,7 @@ function Login() {
           name="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} //
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full p-2 border mb-3"
           required
         />
@@ -44,11 +60,12 @@ function Login() {
           className="w-full p-2 border mb-3"
           required
         />
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+
         <button className="bg-yellow-500 text-white w-full py-2 rounded">
           Login
         </button>
       </form>
+
       <button
         onClick={handleGoogle}
         className="bg-red-400 text-white w-full py-2 mt-3 rounded flex items-center justify-center gap-2"
@@ -58,7 +75,7 @@ function Login() {
 
       <p className="mt-3 text-center text-sm">
         Forget password?
-        <Link to="/forget" state={{ email }} className="text-yellow-700">
+        <Link to="/forget" state={{ email }} className="text-yellow-700 ml-1">
           Reset
         </Link>
       </p>

@@ -13,7 +13,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import MyProfile from "./Pages/Profile/MyProfile";
-import AllSkills from "./Pages/AllSkills"; // ✅ Import AllSkills
+import AllSkills from "./Pages/AllSkills"; //
 
 function MainApp() {
   return (
@@ -47,13 +47,13 @@ function MainApp() {
                 }
               />
 
-              {/* ✅ All Skills Page Route */}
               <Route path="/all-skills" element={<AllSkills />} />
             </Routes>
           </main>
 
           <Footer />
-          <Toaster />
+
+          <Toaster position="top-center" reverseOrder={false} />
         </div>
       </BrowserRouter>
     </AuthProvider>
