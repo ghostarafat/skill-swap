@@ -67,7 +67,7 @@ const Support = () => {
               Support Center
             </span>
           </div>
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-yellow-700 mb-3">
             We're Here to Help You
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">

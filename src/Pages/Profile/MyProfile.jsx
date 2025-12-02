@@ -38,7 +38,7 @@ function MyProfile() {
 
   return (
     <div className="max-w-md mx-auto mt-10 bg-yellow-50 p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-center text-yellow-700 mb-4">
+      <h2 className="text-3xl md:text-5xl font-bold text-center text-yellow-700 mb-3">
         My Profile
       </h2>
 

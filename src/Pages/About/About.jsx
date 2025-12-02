@@ -61,7 +61,7 @@ const About = () => {
             </span>
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-700 mb-3 flex items-center justify-center gap-2 leading-tight">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-yellow-700 mb-3 flex items-center justify-center gap-2 leading-tight">
             Welcome to SkillSwap
           </h1>
           <p className="text-lg md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">

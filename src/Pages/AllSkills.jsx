@@ -81,7 +81,6 @@ function AllSkills() {
             </select>
           </div>
 
-          {/* Skills Grid - 4 Cards per Row */}
           {filteredSkills.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredSkills.map((skill) => (

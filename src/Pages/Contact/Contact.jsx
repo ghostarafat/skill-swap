@@ -76,7 +76,7 @@ const Contact = () => {
               </span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-700 mb-3 flex items-center justify-center gap-2 leading-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-yellow-700 mb-3 flex items-center justify-center gap-2 leading-tight">
               We'd Love to Hear From You
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
