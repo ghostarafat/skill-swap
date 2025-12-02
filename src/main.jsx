@@ -17,6 +17,7 @@ import AllSkills from "./Pages/AllSkills"; //
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/contact";
 import Support from "./Pages/Support/Support";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 
 function MainApp() {
   return (
@@ -49,6 +50,8 @@ function MainApp() {
               />
 
               <Route path="/all-skills" element={<AllSkills />} />
+
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </main>
 

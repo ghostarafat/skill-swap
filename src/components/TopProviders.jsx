@@ -21,7 +21,7 @@ function TopProviders() {
   ];
 
   return (
-    <div className="my-10 w-11/12 mx-auto mt-20">
+    <div className=" w-11/12 mx-auto mt-20">
       <h2 className="text-3xl md:text-4xl font-bold text-center  text-yellow-700 mb-10">
         🌟 Top Rated Providers
       </h2>
@@ -33,7 +33,7 @@ function TopProviders() {
             className="group relative p-[2px] rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400 bg-[length:200%_200%] hover:animate-gradientMove transition-all duration-500"
           >
             {/* inner card */}
-            <div className="bg-white rounded-2xl p-6 text-center shadow-md group-hover:shadow-xl transform group-hover:-translate-y-2 transition-all duration-300 ease-out">
+            <div className="bg-white  rounded-2xl p-6 text-center shadow-md group-hover:shadow-xl transform group-hover:-translate-y-2 transition-all duration-300 ease-out">
               <div className="h-20 w-20 mx-auto rounded-full overflow-hidden bg-gradient-to-r from-yellow-300 to-orange-400 flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
                 {p.image ? (
                   <img
@@ -53,8 +53,11 @@ function TopProviders() {
                 ⭐ {p.rating}
               </div>
 
-              <button className="mt-4 px-4 py-2 bg-yellow-500 text-white text-sm rounded-md hover:bg-yellow-600 transition-all duration-300">
-                View Profile
+              <button
+                disabled
+                className="mt-4 px-4 py-2 bg-gray-300 text-gray-600 text-sm rounded-md cursor-not-allowed"
+              >
+                Coming Soon
               </button>
             </div>
           </div>
