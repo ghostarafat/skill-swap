@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="bg-gradient-to-r from-yellow-200 via-yellow-100 to-yellow-200 text-gray-700 py-8 mt-12 shadow-inner">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
-        {/* Logo (ADDED) */}
+        {/* Logo  */}
         <div>
           <h2 className="text-xl font-bold text-yellow-800 flex items-center justify-center md:justify-start gap-1">
             <GiBodySwapping /> SkillSwap
@@ -14,14 +14,14 @@ function Footer() {
           <p className="mt-2 text-sm">Exchange skills. Empower growth.</p>
         </div>
 
-        {/* Contact (UNCHANGED) */}
+        {/* Contact */}
         <div>
           <h4 className="font-semibold mb-2">Contact Us</h4>
           <p>Email: support@skillswap.com</p>
           <p>Phone: +880 1234 567890</p>
         </div>
 
-        {/* Social (UNCHANGED) */}
+        {/* Social  */}
         <div>
           <h4 className="font-semibold mb-2">Follow Us</h4>
           <div className="flex justify-center md:justify-start gap-4 mt-2 text-xl">
@@ -39,7 +39,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Quick Links (ADDED) */}
+        {/* Quick Links  */}
         <div>
           <h4 className="font-semibold mb-2">Quick Links</h4>
           <p>
