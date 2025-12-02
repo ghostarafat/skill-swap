@@ -22,10 +22,10 @@ function Home() {
     <div className="px-4 sm:px-6 mx-auto max-w-7xl w-full">
       {/* --- Hero Title Section --- */}
       <div className="text-center mt-10">
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-yellow-700 dark:text-yellow-400 mb-3 flex items-center justify-center gap-2 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-700  mb-3 flex items-center justify-center gap-2 leading-tight">
           Welcome to SkillSwap 🌻
         </h1>
-        <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm sm:text-base max-w-md mx-auto px-2">
+        <p className="text-gray-600  mb-8 text-sm sm:text-base max-w-md mx-auto px-2">
           Learn new skills, share yours, and grow together.
         </p>
       </div>
@@ -34,7 +34,7 @@ function Home() {
 
       {/* --- Popular Skills --- */}
       <div className="mt-20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-yellow-700 dark:text-yellow-400 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-yellow-700  text-center">
           🔥 Popular Skills
         </h2>
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
