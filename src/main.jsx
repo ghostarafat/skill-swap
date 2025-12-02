@@ -14,6 +14,9 @@ import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import MyProfile from "./Pages/Profile/MyProfile";
 import AllSkills from "./Pages/AllSkills"; //
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/contact";
+import Support from "./Pages/Support/Support";
 
 function MainApp() {
   return (
@@ -29,14 +32,12 @@ function MainApp() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/forget" element={<ForgetPassword />} />
 
-              <Route
-                path="/skill/:id"
-                element={
-                  <PrivateRoute>
-                    <SkillDetails />
-                  </PrivateRoute>
-                }
-              />
+              <Route path="/skill/:id" element={<SkillDetails />} />
+
+              {/* more 3 public route added now */}
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/support" element={<Support />} />
 
               <Route
                 path="/profile"
@@ -60,8 +61,4 @@ function MainApp() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <MainApp />
-  </React.StrictMode>
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<MainApp />);

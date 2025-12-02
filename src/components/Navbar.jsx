@@ -22,43 +22,59 @@ function Navbar() {
           to="/"
           className="text-xl sm:text-2xl font-bold text-yellow-800 tracking-wide"
         >
-          <span className="flex items-center justify-center gap-1">
+          <span className="flex items-center gap-1">
             <GiBodySwapping />
             SkillSwap
           </span>
         </Link>
 
-        {/* Desktop & Tablet Menu */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center flex-1 justify-between">
-          <div className="flex justify-center space-x-6 flex-1">
+          {/* Center Nav Links */}
+          <div className="flex justify-center gap-6 flex-1">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
+
             <NavLink to="/all-skills" className={navLinkClass}>
               All Skills
             </NavLink>
+
+            <NavLink to="/about" className={navLinkClass}>
+              About
+            </NavLink>
+
+            <NavLink to="/contact" className={navLinkClass}>
+              Contact
+            </NavLink>
+
+            <NavLink to="/support" className={navLinkClass}>
+              Support
+            </NavLink>
           </div>
 
-          {/* User/Auth Section */}
-          <div className="flex items-center space-x-4">
+          {/* Auth/User Section */}
+          <div className="flex items-center gap-4">
             {user ? (
               <>
                 <NavLink to="/profile" className={navLinkClass}>
                   My Profile
                 </NavLink>
+
                 <button
                   onClick={logout}
-                  className="px-4 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-600 shadow-sm transition transform hover:scale-105"
+                  className="px-4 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-600 transition"
                 >
                   Logout
                 </button>
+
                 <div className="relative group">
                   <img
                     src={user.photoURL || userImage}
                     alt="User"
-                    className="w-8 h-8 rounded-full cursor-pointer border border-yellow-400"
+                    className="w-8 h-8 rounded-full border border-yellow-400 cursor-pointer"
                   />
-                  <div className="absolute left-0 mt-1 bg-white text-sm text-gray-700 px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  <div className="absolute left-1/2 -translate-x-1/2 mt-2 bg-white text-sm text-gray-700 px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100">
                     {user.displayName}
                   </div>
                 </div>
@@ -67,13 +83,14 @@ function Navbar() {
               <>
                 <NavLink
                   to="/login"
-                  className="px-4 py-2 rounded-md bg-yellow-500 text-white font-medium hover:bg-yellow-600 shadow-sm transition transform hover:scale-105"
+                  className="px-4 py-2 rounded-md bg-yellow-500 text-white font-medium hover:bg-yellow-600"
                 >
                   Login
                 </NavLink>
+
                 <NavLink
                   to="/signup"
-                  className="px-4 py-2 rounded-md border border-yellow-500 text-yellow-700 font-medium hover:bg-yellow-500 hover:text-white transition transform hover:scale-105"
+                  className="px-4 py-2 rounded-md border border-yellow-500 text-yellow-700 font-medium hover:bg-yellow-500 hover:text-white"
                 >
                   Signup
                 </NavLink>
@@ -82,11 +99,10 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Hamburger for mobile */}
+        {/* Mobile Hamburger */}
         <button
-          className="text-yellow-800 text-2xl md:hidden ml-2"
+          className="md:hidden text-2xl text-yellow-800"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -94,7 +110,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="flex flex-col mt-3 space-y-2 md:hidden">
+        <div className="md:hidden mt-3 flex flex-col space-y-2 px-4">
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
@@ -102,12 +118,37 @@ function Navbar() {
           >
             Home
           </NavLink>
+
           <NavLink
             to="/all-skills"
             onClick={() => setIsOpen(false)}
             className={navLinkClass}
           >
             All Skills
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            onClick={() => setIsOpen(false)}
+            className={navLinkClass}
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className={navLinkClass}
+          >
+            Contact
+          </NavLink>
+
+          <NavLink
+            to="/support"
+            onClick={() => setIsOpen(false)}
+            className={navLinkClass}
+          >
+            Support
           </NavLink>
 
           {user ? (
@@ -119,24 +160,23 @@ function Navbar() {
               >
                 My Profile
               </NavLink>
+
               <button
                 onClick={() => {
                   logout();
                   setIsOpen(false);
                 }}
-                className="hover:text-yellow-700 font-medium text-left"
+                className="text-left font-medium text-red-600"
               >
                 Logout
               </button>
-              <div className="flex items-center gap-2 pt-1">
+
+              <div className="flex items-center gap-2 pt-2">
                 <img
                   src={user.photoURL || userImage}
-                  alt="User"
                   className="w-8 h-8 rounded-full border border-yellow-400"
                 />
-                <span className="text-sm text-gray-700">
-                  {user.displayName}
-                </span>
+                <span className="text-sm">{user.displayName}</span>
               </div>
             </>
           ) : (
@@ -144,14 +184,15 @@ function Navbar() {
               <NavLink
                 to="/login"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-md bg-yellow-500 text-white font-medium hover:bg-yellow-600 shadow-sm transition transform hover:scale-105"
+                className="bg-yellow-500 text-white px-3 py-2 rounded"
               >
                 Login
               </NavLink>
+
               <NavLink
                 to="/signup"
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2 rounded-md border border-yellow-500 text-yellow-700 font-medium hover:bg-yellow-500 hover:text-white transition transform hover:scale-105"
+                className="border border-yellow-500 text-yellow-700 px-3 py-2 rounded"
               >
                 Signup
               </NavLink>

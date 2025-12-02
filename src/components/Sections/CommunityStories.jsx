@@ -1,7 +1,7 @@
 function CommunityStories() {
   return (
-    <div className="my-16 w-11/12 max-w-3xl mx-auto">
-      <h2 className="text-3xl font-bold mb-8 text-center text-yellow-700">
+    <div className="my-16 w-11/12 max-w-3xl mx-auto mt-20">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-yellow-700">
         💬 Community Stories
       </h2>
 

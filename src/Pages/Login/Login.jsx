@@ -41,7 +41,7 @@ function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-lg bg-yellow-50">
+    <div className="max-w-md mx-auto mt-10 p-6 border border-gray-200 rounded-lg bg-yellow-50">
       <h2 className="text-2xl font-bold text-center mb-4">Login Here</h2>
       <form onSubmit={handleLogin}>
         <input
@@ -50,14 +50,14 @@ function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border mb-3"
+          className="w-full p-2 border border-gray-200 mb-3"
           required
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className="w-full p-2 border mb-3"
+          className="w-full p-2 border border-gray-200 mb-3"
           required
         />
 

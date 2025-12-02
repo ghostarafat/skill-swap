@@ -21,8 +21,8 @@ function TopProviders() {
   ];
 
   return (
-    <div className="my-12 w-11/12 mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-8 text-yellow-700">
+    <div className="my-10 w-11/12 mx-auto mt-20">
+      <h2 className="text-3xl md:text-4xl font-bold text-center  text-yellow-700 mb-10">
         🌟 Top Rated Providers
       </h2>
 
